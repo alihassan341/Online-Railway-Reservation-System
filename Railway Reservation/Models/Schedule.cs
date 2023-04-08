@@ -10,9 +10,9 @@ namespace Railway_Reservation.Models
         [ForeignKey("CityDesination")]
         public int? Desination { get; set;}
         public City? CityDesination { get; set; }
-        //[ForeignKey("CitySource")]
+        [ForeignKey("CitySource")]
         public int? Source { get; set; }
-        //public City? CitySource { get; set; }
+        public City? CitySource { get; set; }
         public bool IsUp { get; set; }
         public DateTime DepartureTime { get; set; }
         public DateTime ArrivalTime { get; set; }

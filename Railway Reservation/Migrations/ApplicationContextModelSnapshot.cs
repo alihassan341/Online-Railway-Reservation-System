@@ -161,6 +161,8 @@ namespace Railway_Reservation.Migrations
 
                     b.HasIndex("Desination");
 
+                    b.HasIndex("Source");
+
                     b.HasIndex("TrainId");
 
                     b.ToTable("Schedules");
@@ -285,6 +287,10 @@ namespace Railway_Reservation.Migrations
                         .WithMany()
                         .HasForeignKey("Desination");
 
+                    b.HasOne("Railway_Reservation.Models.City", "CitySource")
+                        .WithMany()
+                        .HasForeignKey("Source");
+
                     b.HasOne("Railway_Reservation.Models.Train", "Train")
                         .WithMany()
                         .HasForeignKey("TrainId")
@@ -292,6 +298,8 @@ namespace Railway_Reservation.Migrations
                         .IsRequired();
 
                     b.Navigation("CityDesination");
+
+                    b.Navigation("CitySource");
 
                     b.Navigation("Train");
                 });
