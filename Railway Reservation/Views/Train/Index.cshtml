@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Train>
+
+<table style="font-family: Arial, sans-serif; border-collapse: collapse; width: 100%; margin-bottom: 1em;">
+    <thead>
+        <tr>
+            <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #f2f2f2;">Name</th>
+            <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #f2f2f2;">Registration Number</th>
+            <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #f2f2f2;">Active</th>
+            <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #f2f2f2;">Economy Seats</th>
+            <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #f2f2f2;">Business Seats</th>
+            <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #f2f2f2;">AC Standard Seats</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var flight in Model)
+        {
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">@flight.Name</td>
+                <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">@flight.RegNo</td>
+                <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">
+                    @if (flight.IsActive)
+                    {
+                        <i style="font-size: 1.2em; color: green;" class="fa fa-check"></i>
+                    }
+                    else
+                    {
+                        <i style="font-size: 1.2em; color: red;" class="fa fa-times"></i>
+                    }
+                </td>
+                <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">@flight.EconomySeats</td>
+                <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">@flight.BusinessSeats</td>
+                <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">@flight.AcStandardSeats</td>
+            </tr>
+        }
+    </tbody>
+</table>

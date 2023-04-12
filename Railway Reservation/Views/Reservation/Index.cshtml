@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Reservation>
+
+<h1 style="text-align: center;">Booking List</h1>
+
+<table class="table" style="width: 80%; margin: 0 auto;">
+    <thead style="background-color: #007bff; color: #fff;">
+        <tr>
+            <th style="padding: 10px;">Train Name</th>
+            <th style="padding: 10px;">Schedule Date</th>
+            <th style="padding: 10px;">User Name</th>
+            <th style="padding: 10px;">Created Date</th>
+            <th style="padding: 10px;">Total Amount</th>
+            <th style="padding: 10px;">Train Class</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var booking in Model)
+        {
+            <tr style="background-color: #f8f9fa;">
+                <td style="padding: 10px;">@booking.Train?.Name</td>
+                <td style="padding: 10px;">@booking.Schedule?.ArrivalTime/td>
+                <td style="padding: 10px;">@booking.User?.FirstName>
+                <td style="padding: 10px;">@booking.CreatedDate</td>
+                <td style="padding: 10px;">@booking.TotalAmount</td>
+                <td style="padding: 10px;">@booking.TrainClass</td>
+            </tr>
+        }
+    </tbody>
+</table>

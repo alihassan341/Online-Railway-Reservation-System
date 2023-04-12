@@ -1,0 +1,33 @@
+﻿@model User
+@{
+    ViewData["Title"] = "Login";
+}
+
+
+<h1  align="center">Login</h1>
+<hr />
+<div style="width:50%; margin-left: 300px;">
+<form method="post">
+
+ <div class="form-row">
+        <div class="form-group col-md-12">
+
+                <input type="email" asp-for="Email" class="form-control" id="inputEmail4" placeholder="Email">
+        </div>
+
+    </div>
+     <div class="form-row">
+        <div class="form-group col-md-12">
+
+                <input type="password" asp-for="Password" class="form-control" id="inputEmail4" placeholder="Password">
+        </div>
+    </div>
+      <div class="form-row">
+          
+            <div class="form-group col-md-12" style="margin-left:38%">
+
+                <button type="submit" class="btn btn-primary" style="width:20%" asp-action="Login">Sign in</button>                
+            </div>
+        </div>
+</form>
+</div>
